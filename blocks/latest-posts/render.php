@@ -1,0 +1,1 @@
+// render.php for latest-posts
