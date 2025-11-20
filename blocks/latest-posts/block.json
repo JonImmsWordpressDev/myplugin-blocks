@@ -1,1 +1,49 @@
-// block.json for latest-posts
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "myplugin/latest-posts",
+  "version": "1.0.0",
+  "title": "Latest Posts",
+  "category": "widgets",
+  "icon": "admin-post",
+  "description": "Display a list of your most recent posts with customizable options",
+  "keywords": ["posts", "recent", "blog", "latest"],
+  "textdomain": "myplugin-blocks",
+  "supports": {
+    "html": false,
+    "align": true
+  },
+  "attributes": {
+    "numberOfPosts": {
+      "type": "number",
+      "default": 5
+    },
+    "displayExcerpt": {
+      "type": "boolean",
+      "default": true
+    },
+    "displayDate": {
+      "type": "boolean",
+      "default": true
+    },
+    "displayAuthor": {
+      "type": "boolean",
+      "default": false
+    },
+    "displayFeaturedImage": {
+      "type": "boolean",
+      "default": false
+    },
+    "categories": {
+      "type": "array",
+      "default": []
+    },
+    "order": {
+      "type": "string",
+      "default": "desc"
+    }
+  },
+  "editorScript": "file:../../build/latest-posts.js",
+  "style": "file:../../build/latest-posts.css",
+  "render": "file:./render.php"
+}
