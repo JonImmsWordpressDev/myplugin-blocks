@@ -1,15 +1,35 @@
 {
   "name": "myplugin-blocks",
+  "version": "1.0.0",
+  "description": "Custom Gutenberg blocks for WordPress",
+  "author": "Your Name",
+  "license": "GPL-2.0-or-later",
+  "keywords": [
+    "wordpress",
+    "gutenberg",
+    "blocks"
+  ],
   "scripts": {
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development",
+    "watch": "webpack --mode development --watch",
+    "start": "webpack --mode development --watch"
   },
   "devDependencies": {
-    "webpack": "^5.0.0",
-    "webpack-cli": "^4.0.0",
-    "babel-loader": "^8.0.0",
-    "style-loader": "^3.0.0",
-    "css-loader": "^6.0.0",
-    "sass-loader": "^12.0.0",
-    "sass": "^1.32.0"
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.23.0",
+    "@babel/preset-react": "^7.22.0",
+    "@babel/plugin-proposal-class-properties": "^7.18.0",
+    "babel-loader": "^9.1.0",
+    "css-loader": "^6.8.0",
+    "mini-css-extract-plugin": "^2.7.0",
+    "sass": "^1.69.0",
+    "sass-loader": "^13.3.0",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
   }
 }

@@ -1,1 +1,76 @@
-// style.scss for alert-box
+.alert-box {
+    position: relative;
+    padding: 1rem 2.5rem 1rem 1rem;
+    margin: 1rem 0;
+    border-left: 4px solid;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+
+    .alert-message {
+        margin: 0;
+        padding: 0;
+    }
+
+    .alert-close {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.5rem;
+        background: transparent;
+        border: none;
+        font-size: 1.5rem;
+        line-height: 1;
+        cursor: pointer;
+        padding: 0.25rem 0.5rem;
+        opacity: 0.6;
+        transition: opacity 0.2s;
+
+        &:hover {
+            opacity: 1;
+        }
+    }
+
+    // Info style (blue)
+    &.alert-info {
+        background-color: #e7f3ff;
+        border-color: #2196f3;
+        color: #0d47a1;
+
+        .alert-close {
+            color: #0d47a1;
+        }
+    }
+
+    // Success style (green)
+    &.alert-success {
+        background-color: #e8f5e9;
+        border-color: #4caf50;
+        color: #1b5e20;
+
+        .alert-close {
+            color: #1b5e20;
+        }
+    }
+
+    // Warning style (orange)
+    &.alert-warning {
+        background-color: #fff3e0;
+        border-color: #ff9800;
+        color: #e65100;
+
+        .alert-close {
+            color: #e65100;
+        }
+    }
+
+    // Error style (red)
+    &.alert-error {
+        background-color: #ffebee;
+        border-color: #f44336;
+        color: #b71c1c;
+
+        .alert-close {
+            color: #b71c1c;
+        }
+    }
+}

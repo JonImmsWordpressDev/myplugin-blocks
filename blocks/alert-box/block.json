@@ -1,1 +1,41 @@
-// block.json for alert-box
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "myplugin/alert-box",
+  "version": "1.0.0",
+  "title": "Alert Box",
+  "category": "common",
+  "icon": "warning",
+  "description": "Display important messages with customizable alert styles",
+  "keywords": ["alert", "notice", "warning", "message"],
+  "textdomain": "myplugin-blocks",
+  "supports": {
+    "html": false,
+    "align": true,
+    "color": {
+      "background": true,
+      "text": true
+    },
+    "spacing": {
+      "margin": true,
+      "padding": true
+    }
+  },
+  "attributes": {
+    "message": {
+      "type": "string",
+      "default": "This is an alert message"
+    },
+    "alertType": {
+      "type": "string",
+      "default": "info",
+      "enum": ["info", "success", "warning", "error"]
+    },
+    "isDismissible": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "editorScript": "file:../../build/alert-box.js",
+  "style": "file:../../build/alert-box.css"
+}
