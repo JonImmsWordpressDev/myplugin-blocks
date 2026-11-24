@@ -1,6 +1,9 @@
 <?php
 /**
- * Render callback for the Latest Posts block
+ * Render template for the Latest Posts block.
+ *
+ * WordPress buffers this file's output itself (block.json "render"), so the
+ * template echoes its markup and returns nothing.
  *
  * @param array    $attributes Block attributes
  * @param string   $content    Block content
@@ -32,8 +35,6 @@ $wrapper_attributes = get_block_wrapper_attributes(array(
     'class' => 'latest-posts',
 ));
 
-// Start output buffering
-ob_start();
 ?>
 
 <div <?php echo $wrapper_attributes; ?>>
@@ -97,6 +98,3 @@ ob_start();
 <?php
 // Reset post data
 wp_reset_postdata();
-
-// Return buffered content
-return ob_get_clean();
