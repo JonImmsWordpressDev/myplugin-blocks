@@ -17,7 +17,7 @@ $display_excerpt = isset($attributes['displayExcerpt']) ? (bool) $attributes['di
 $display_date = isset($attributes['displayDate']) ? (bool) $attributes['displayDate'] : true;
 $display_author = isset($attributes['displayAuthor']) ? (bool) $attributes['displayAuthor'] : false;
 $display_featured_image = isset($attributes['displayFeaturedImage']) ? (bool) $attributes['displayFeaturedImage'] : false;
-$order = isset($attributes['order']) ? sanitize_text_field($attributes['order']) : 'desc';
+$order = isset($attributes['order']) && 'asc' === strtolower($attributes['order']) ? 'asc' : 'desc';
 
 // Query posts
 $query_args = array(
@@ -26,6 +26,9 @@ $query_args = array(
     'order'          => $order,
     'orderby'        => 'date',
     'no_found_rows'  => true,
+    // Without this, WordPress prepends sticky posts on top of the count, as
+    // this query is flagged is_home. Core's Latest Posts block does the same.
+    'ignore_sticky_posts' => true,
 );
 
 $recent_posts = new WP_Query($query_args);
