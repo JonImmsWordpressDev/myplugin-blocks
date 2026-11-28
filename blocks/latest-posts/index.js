@@ -4,6 +4,7 @@ import { PanelBody, RangeControl, ToggleControl, SelectControl } from '@wordpres
 import { __ } from '@wordpress/i18n';
 import { useSelect } from '@wordpress/data';
 import { format } from '@wordpress/date';
+import { decodeEntities } from '@wordpress/html-entities';
 import './style.scss';
 
 function Edit({ attributes, setAttributes }) {
@@ -81,17 +82,18 @@ function Edit({ attributes, setAttributes }) {
                         {posts.map((post) => {
                             const featuredImage = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
                             const author = post._embedded?.author?.[0]?.name;
+                            const title = decodeEntities(post.title.rendered);
 
                             return (
                                 <li key={post.id} className="latest-post-item">
                                     {displayFeaturedImage && featuredImage && (
                                         <div className="post-thumbnail">
-                                            <img src={featuredImage} alt={post.title.rendered} />
+                                            <img src={featuredImage} alt={title} />
                                         </div>
                                     )}
                                     <div className="post-content">
                                         <h4 className="post-title">
-                                            <a href={post.link}>{post.title.rendered || __('(No title)', 'myplugin-blocks')}</a>
+                                            <a href={post.link}>{title || __('(No title)', 'myplugin-blocks')}</a>
                                         </h4>
                                         <div className="post-meta">
                                             {displayDate && (

@@ -56,6 +56,7 @@ module.exports = (env, argv) => {
       '@wordpress/i18n': ['wp', 'i18n'],
       '@wordpress/data': ['wp', 'data'],
       '@wordpress/date': ['wp', 'date'],
+      '@wordpress/html-entities': ['wp', 'htmlEntities'],
     },
     devtool: isProduction ? false : 'source-map',
     performance: {
