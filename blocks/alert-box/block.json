@@ -37,5 +37,6 @@
     }
   },
   "editorScript": "file:../../build/alert-box.js",
+  "viewScript": "file:../../build/alert-box-view.js",
   "style": "file:../../build/alert-box.css"
 }

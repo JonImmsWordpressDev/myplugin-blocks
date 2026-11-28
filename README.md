@@ -36,6 +36,8 @@ myplugin-blocks/
 │   │   ├── index.js          # Block registration
 │   │   ├── edit.js           # Editor component
 │   │   ├── save.js           # Frontend save function
+│   │   ├── deprecated.js     # Older saved markup, migrated on load
+│   │   ├── view.js           # Front-end dismiss button handler
 │   │   └── style.scss        # Block styles
 │   └── latest-posts/
 │       ├── block.json        # Block metadata

@@ -7,6 +7,7 @@ module.exports = (env, argv) => {
   return {
     entry: {
       'alert-box': './blocks/alert-box/index.js',
+      'alert-box-view': './blocks/alert-box/view.js',
       'latest-posts': './blocks/latest-posts/index.js'
     },
     output: {

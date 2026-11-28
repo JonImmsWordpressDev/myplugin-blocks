@@ -15,9 +15,9 @@ export default function save({ attributes }) {
             />
             {isDismissible && (
                 <button
+                    type="button"
                     className="alert-close"
                     aria-label="Close alert"
-                    onClick="this.parentElement.style.display='none'"
                 >
                     &times;
                 </button>
